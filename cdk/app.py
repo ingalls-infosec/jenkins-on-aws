@@ -18,9 +18,10 @@ region = getenv('CDK_DEFAULT_REGION')
 service_discovery_namespace = 'jenkins'
 
 app = core.App()
-network = Network(app, stack_name + 'Network')
-ecs_cluster = ECSCluster(app, stack_name + 'ECS', vpc=network.vpc, service_discovery_namespace=service_discovery_namespace)
-jenkins_workers = JenkinsWorker(app, stack_name + "Worker", vpc=network.vpc, cluster=ecs_cluster)
-jenkins_leader_service = JenkinsLeader(app, stack_name + 'JenkinsLeader', cluster=ecs_cluster, vpc=network, worker=jenkins_workers)
+env_USA = core.Environment(account=config['DEFAULT']['account'] , region=config['DEFAULT']['region'] )
+network = Network(app, stack_name + 'Network',env=env_USA)
+ecs_cluster = ECSCluster(app, stack_name + 'ECS', vpc=network.vpc, service_discovery_namespace=service_discovery_namespace,env=env_USA)
+jenkins_workers = JenkinsWorker(app, stack_name + "Worker", vpc=network.vpc, cluster=ecs_cluster,env=env_USA)
+jenkins_leader_service = JenkinsLeader(app, stack_name + 'JenkinsLeader', cluster=ecs_cluster, vpc=network, worker=jenkins_workers,env=env_USA)
 
 app.synth()
