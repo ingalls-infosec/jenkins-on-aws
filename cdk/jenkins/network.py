@@ -11,7 +11,7 @@ config.read('./config.ini')
 class Network(core.Stack):
     def __init__(self, scope: core.Stack, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
-        self.vpc = aws_ec2.Vpc.from_lookup(self,"Vpc",vpc_id=config['DEFAULT']['vpc'])
+        self.vpc = aws_ec2.Vpc.from_lookup(self,"Vpc",vpc_name=config['DEFAULT']['vpcname'],subnet_group_name_tag=config['DEFAULT']['subnetname'])
         # (
         #     self, "Vpc",
         #     cidr=config['DEFAULT']['cidr'],
