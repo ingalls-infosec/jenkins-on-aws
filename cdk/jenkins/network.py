@@ -5,16 +5,15 @@ from aws_cdk import (
 from configparser import ConfigParser
 
 config = ConfigParser()
-config.read('config.ini')
+config.read('./config.ini')
 
 
 class Network(core.Stack):
-
     def __init__(self, scope: core.Stack, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
-
-        self.vpc = aws_ec2.Vpc(
-            self, "Vpc",
-            cidr=config['DEFAULT']['cidr'],
-        )
+        self.vpc = aws_ec2.Vpc.from_lookup(self,config['DEFAULT']['vpc'],is_default=True)
+        # (
+        #     self, "Vpc",
+        #     cidr=config['DEFAULT']['cidr'],
+        # )
 

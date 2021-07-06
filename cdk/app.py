@@ -9,7 +9,7 @@ from jenkins.jenkins_leader import JenkinsLeader
 from jenkins.jenkins_worker import JenkinsWorker
 
 config = ConfigParser()
-config.read('config.ini')
+config.read('./config.ini')
 
 stack_name = config['DEFAULT']['stack_name'] 
 account = getenv('CDK_DEFAULT_ACCOUNT')

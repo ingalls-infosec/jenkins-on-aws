@@ -13,7 +13,7 @@ from aws_cdk import (
 from configparser import ConfigParser
 
 config = ConfigParser()
-config.read('config.ini')
+config.read('./config.ini')
 
 
 class JenkinsLeader(core.Stack):
