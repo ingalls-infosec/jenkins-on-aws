@@ -11,7 +11,7 @@ jenkins:
           - label: fargate-workers
             templateName: fargate-worker-nodes
             # Build image and store in ECR. Benefits: fast download time, control image on your own
-            image: jenkins/jnlp-slave
+            image: 819671467588.dkr.ecr.us-west-2.amazonaws.com/jenkins-worker:latest
             launchType: FARGATE
             networkMode: awsvpc
             # Soft memory limit

@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.235.2-lts
+FROM 819671467588.dkr.ecr.us-west-2.amazonaws.com/jenkins-leader:latest
 
 # Install custom plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
