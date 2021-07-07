@@ -20,3 +20,4 @@ node_modules/
 
 # CDK output
 cdk/cdk.out
+cdk/cdk.context.json
