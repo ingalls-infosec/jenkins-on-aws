@@ -29,13 +29,13 @@ class ECSCluster(core.Stack):
             self.asg = self.cluster.add_capacity(
                 "Ec2",
                 instance_type=aws_ec2.InstanceType(config['DEFAULT']['instance_type']),
-                key_name="jenkinsonaws",
+                key_name=config['DEFAULT']['access_key'],
             )
 
             self.efs_sec_grp = aws_ec2.SecurityGroup(
-                 self, "EFSSecGrp",
-                 vpc=self.vpc,
-                 allow_all_outbound=True,
+                self, "EFSSecGrp",
+                vpc=self.vpc,
+                allow_all_outbound=True,
             )
 
             self.efs_sec_grp.add_ingress_rule(
