@@ -11,7 +11,11 @@ USER root
 
 RUN apt-get update &&\
     apt-get install -y python-pip &&\
-    pip install jinja2 dnspython &&\
+    apt-get install -y python3-pip &&\
+    apt-get install -y awscli &&\
+    apt-get install -y sloccount &&\
+    pip install jinja2 dnspython virtualenv pylint radon coverage &&\
+    pip3 install jinja2 dnspython virtualenv pylint radon coverage &&\
     rm -rf /var/lib/apt/lists/* &&\
     touch /config-as-code.yaml &&\
     chown jenkins: /config-as-code.yaml &&\

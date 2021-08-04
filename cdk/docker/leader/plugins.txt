@@ -62,11 +62,11 @@ workflow-cps-global-lib:2.21
 handlebars:3.0.8
 bootstrap4-api:4.6.0-3
 pubsub-light:1.16
-credentials-binding:1.26
+credentials-binding:1.27
 checks-api:1.7.0
 junit:1.51
 github-api:1.123
-gradle:1.36
+gradle:1.37.1
 blueocean-rest-impl:1.24.7
 plain-credentials:1.7
 aws-java-sdk:1.11.995
@@ -85,7 +85,7 @@ git-client:3.7.2
 credentials:2.5
 github:1.33.1
 variant:1.4
-workflow-step-api:2.23
+workflow-step-api:2.24
 s3:0.11.8
 node-iterator-api:1.5.0
 pipeline-model-definition:1.8.5
@@ -113,7 +113,7 @@ blueocean:1.24.7
 windows-slaves:1.8
 font-awesome-api:5.15.3-3
 docker-workflow:1.26
-sshd:3.0.3
+sshd:3.0.4
 bootstrap5-api:5.0.1-2
 plugin-util-api:2.3.0
 apache-httpcomponents-client-4-api:4.5.13-1.0
@@ -138,3 +138,4 @@ matrix-auth:2.6.7
 okhttp-api:3.14.9
 pipeline-model-extensions:1.8.5
 aqua-security-scanner:3.0.25
+pipeline-utility-steps:2.8.0

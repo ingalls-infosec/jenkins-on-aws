@@ -34,7 +34,6 @@ class JenkinsLeader(core.Stack):
             self, "JenkinsleaderDockerImage",
             directory='./docker/leader/'
         )
-
         
         if config['DEFAULT']['fargate_enabled'] == "yes" or not config['DEFAULT']['ec2_enabled'] == "yes":
             
